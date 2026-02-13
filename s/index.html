@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="el"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Redirecting…&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="robots" content="noindex,nofollow" /&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Σε ανακατευθύνω στη φόρμα…&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p id="fallback" style="display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Αν δεν γίνει ανακατεύθυνση, πάτησε:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a id="link" href="#"&gt;Συνέχεια&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const TYPEFORM_BASE = "https://YOURORG.typeform.com/to/YOURFORMID";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const qs = new URLSearchParams(window.location.search);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const c = qs.get("c");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const p = qs.get("p") || "000";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const m = qs.get("m");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const v = qs.get("v") || "1";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!c || !m) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.body.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Λείπουν πληροφορίες από το QR/link.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Σωστό παράδειγμα: &lt;code&gt;?c=MAS&amp;p=012&amp;m=03&amp;v=1&lt;/code&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const target = new URL(TYPEFORM_BASE);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>target.searchParams.set("c", c);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>target.searchParams.set("p", p);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>target.searchParams.set("m", m);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>target.searchParams.set("v", v);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("fallback").style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const a = document.getElementById("link");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>a.href = target.toString();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.location.replace(target.toString());</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
